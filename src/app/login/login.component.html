@@ -1,0 +1,35 @@
+<div *ngIf="!activo; else loggedOut"> 
+<div class="container-fluid mt-5 ">
+    <div class="row mt-5">
+      <div class="container-fluid mt-5">
+        <div class="row border border-bg">
+          <div class="col-4"></div>
+          <div class="col-4  mt-5 border border-white">
+              <H4 class="text-center">LOGIN</H4>
+            <div class="row mb-3">
+              <div class="form-floating mb-3 mt-2">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" >
+                <label for="floatingInput">USUARIO</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+                <label for="floatingPassword">CONTRASEÑA</label>
+              </div>
+              <div class="row" style="margin-top: 10px; margin-left: 4px; margin-block-end: 10px;">
+                <button  type="button" class="btn btn-primary" (click)="login()">LOGGIN</button>
+              </div>
+              <div class="row" style="margin-left: 4px;">
+                <a _ngcontent-ine-c23="" href="#" class="btn">¿Forgot password?</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loggedOut>
+    <app-menu></app-menu>
+  </ng-template>

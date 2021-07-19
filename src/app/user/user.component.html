@@ -1,0 +1,27 @@
+<div class="container  card mt-3"> 
+    <div class="row ">
+        <div class="col-md-5 col-sm-5 ml-3" >
+            <p></p>
+            <nav class="nav flex-column">
+                <ul *ngFor="let usuario of listaUsuarios" class="list-group mt-4">
+                    <li class="list-group-item d-flex">
+                        <img src='https://i.pinimg.com/236x/6d/5e/38/6d5e38d19bf4c0c9554b1e6beab75952.jpg'
+                            class="rounded d-block" 
+                            style="height: 60px;width: 60px;" 
+                            (click)="Details_User(usuario.id)"/>
+                        <h4 class="ms-5 mt-2">{{usuario.nombre}} {{usuario.apellido}}</h4>
+                        <a *ngIf="usuario.cumple; else loggedOut">
+                            <img width="25%" src="https://img.freepik.com/vector-gratis/concepto-letras-feliz-cumpleanos_23-2148514502.jpg?size=626&ext=jpg"/>
+                        </a>
+                        <ng-template #loggedOut>
+                         </ng-template>
+                    </li>
+                </ul>
+              </nav>
+        </div>
+        <div class="col-md-5 col-sm-5 ">
+            <app-info [usuario]="usuario"></app-info>
+        </div>
+    </div>
+    
+</div>

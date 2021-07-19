@@ -1,0 +1,13 @@
+<div class="card mt-4 ml-4  text-center w-100" >
+    <div class="card-body">
+        <img src={{usuario.photo}} class="img-fluid w-75" alt="" />
+        <div class="card-title text-uppercase mt-3"> <strong>Nombre:</strong> {{usuario.nombre}} {{usuario.apellido}}  </div>
+        <p class="card-text"><strong>Username: </strong>  {{usuario.username}}   </p>
+        <p><strong>Fecha Nacimiento: </strong>{{usuario.fecha|date:'longDate'}}</p>
+        <div *ngIf="usuario.cumple; else loggedOut">
+            <img width="25%" src="https://img.freepik.com/vector-gratis/concepto-letras-feliz-cumpleanos_23-2148514502.jpg?size=626&ext=jpg"/>
+        </div>
+        <ng-template #loggedOut>
+         </ng-template>
+    </div>
+</div>
