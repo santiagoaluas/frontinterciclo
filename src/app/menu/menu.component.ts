@@ -16,5 +16,8 @@ export class MenuComponent implements OnInit {
     localStorage.removeItem('user')
     window.location.reload()
   }
-
+  status: boolean = false;
+  clickEvent(){
+      this.status = !this.status;       
+  }
 }
